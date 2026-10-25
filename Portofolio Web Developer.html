@@ -1,0 +1,385 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Portofolio Web Developer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: satu kolom editorial 1040px; hero dua kolom (pernyataan + bingkai browser berisi fakta proyek), satu proyek unggulan selebar penuh, lalu keahlian dan kontak. */
+:root {
+  --bg: #eef0f3;
+  --surface: #ffffff;
+  --ink: #14181f;
+  --muted: #5a6472;
+  --line: #d5dae1;
+  --accent: #0b6e78;
+  --accent-ink: #ffffff;
+  --accent-soft: #d8eef0;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1318; --surface: #171c23; --ink: #e9edf2; --muted: #9aa5b3; --line: #2a323d;
+    --accent: #5fc9d3; --accent-ink: #08262a; --accent-soft: #14333a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1318; --surface: #171c23; --ink: #e9edf2; --muted: #9aa5b3; --line: #2a323d;
+  --accent: #5fc9d3; --accent-ink: #08262a; --accent-soft: #14333a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--ink);
+  font: 400 16px/1.65 var(--font-body);
+  padding-block: 0 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 1040px; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.1; margin: 0; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.label { font: 500 12px/1.3 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+
+/* Bilah atas */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--bg); z-index: 10; }
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: var(--bg); border-bottom: 1px solid var(--line); margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))) calc(-1 * max(16px, env(safe-area-inset-right, 0px))); padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px)); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px 16px; padding-block: 12px; flex-wrap: wrap; }
+.brand { font: 700 18px var(--font-display); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+.brand i { width: 10px; height: 10px; background: var(--accent); display: inline-block; flex: none; }
+nav { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+nav a { text-decoration: none; font-size: 14px; color: var(--muted); }
+nav a:hover { color: var(--ink); }
+.theme { background: none; border: 1px solid var(--line); color: var(--ink); font: 500 12px var(--font-mono); padding: 6px 10px; border-radius: 6px; cursor: pointer; }
+.theme:hover { border-color: var(--accent); }
+@media (max-width: 480px) { nav a.hide-sm { display: none; } }
+
+.note { margin-top: 20px; font: 400 13px/1.5 var(--font-mono); color: var(--muted); border: 1px dashed var(--line); padding: 10px 14px; border-radius: 6px; }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 48px; align-items: center; padding-block: 56px 72px; }
+.hero h1 { font-size: clamp(34px, 5.6vw, 58px); font-weight: 700; letter-spacing: -.02em; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero .lead { margin-top: 20px; font-size: 18px; color: var(--muted); max-width: 52ch; }
+.hero .label { display: block; margin-bottom: 18px; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 20px; border-radius: 6px; border: 1px solid var(--ink); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn.primary:hover { filter: brightness(1.08); }
+.btn.ghost:hover { background: var(--surface); }
+
+.browser { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.browser .bar { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.browser .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--line); flex: none; }
+.browser .url { margin-left: 8px; font: 400 12px var(--font-mono); color: var(--muted); background: var(--bg); padding: 4px 10px; border-radius: 4px; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.stat { padding: 18px 20px; border-bottom: 1px solid var(--line); }
+.stat:nth-child(odd) { border-right: 1px solid var(--line); }
+.stat b { display: block; font: 700 38px/1 var(--font-display); color: var(--accent); font-variant-numeric: tabular-nums; }
+.stat span { display: block; margin-top: 8px; font: 400 12px/1.3 var(--font-mono); color: var(--muted); }
+.msg { padding: 16px 20px 18px; }
+.msg .label { display: block; margin-bottom: 10px; }
+.msg pre { margin: 0; font: 400 12.5px/1.6 var(--font-mono); white-space: pre-wrap; overflow-wrap: anywhere; background: var(--bg); border-radius: 6px; padding: 12px 14px; }
+
+/* Bagian */
+section { padding-block: 56px; border-top: 1px solid var(--line); scroll-margin-top: 64px; }
+.sec-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 32px; margin-bottom: 36px; }
+.sec-head h2 { font-size: clamp(26px, 3.6vw, 36px); letter-spacing: -.01em; }
+.sec-head p { color: var(--muted); max-width: 60ch; align-self: end; }
+
+/* Tentang */
+.about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 32px; }
+.about h2 { margin-top: 12px; font-size: clamp(26px, 3.6vw, 36px); letter-spacing: -.01em; }
+.about .copy { display: grid; gap: 16px; max-width: 64ch; }
+dl.facts { margin: 0; display: grid; align-content: start; }
+.facts div { display: flex; justify-content: space-between; gap: 16px; padding-block: 12px; border-bottom: 1px solid var(--line); font-size: 14px; }
+.facts div:first-child { border-top: 1px solid var(--line); }
+.facts dt { color: var(--muted); font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; align-self: center; }
+.facts dd { margin: 0; font-weight: 500; text-align: right; }
+
+/* Proyek unggulan */
+.case { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.case-top { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
+.thumb { background: var(--accent-soft); padding: 28px; display: grid; place-items: center; border-right: 1px solid var(--line); }
+.thumb svg { width: 100%; max-width: 380px; height: auto; display: block; }
+.case-intro { padding: 28px; display: grid; gap: 14px; align-content: center; }
+.case-intro h3 { font-size: clamp(28px, 4vw, 40px); letter-spacing: -.015em; }
+.case-intro p { color: var(--muted); max-width: 52ch; }
+.swatches { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.swatches i { width: 22px; height: 22px; border-radius: 4px; border: 1px solid var(--line); display: inline-block; }
+.swatches span { font: 400 12px var(--font-mono); color: var(--muted); margin-left: 4px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0; }
+.tags li { font: 400 12px var(--font-mono); padding: 4px 8px; border: 1px solid var(--line); border-radius: 4px; background: var(--bg); }
+.case-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.case-cols > div { padding: 24px 28px; border-right: 1px solid var(--line); }
+.case-cols > div:last-child { border-right: 0; }
+.case-cols h4 { margin: 0 0 12px; font: 500 12px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.case-cols ul { margin: 0; padding-left: 18px; display: grid; gap: 8px; font-size: 14.5px; color: var(--muted); }
+.case-cols p { font-size: 14.5px; color: var(--muted); }
+.case-foot { border-top: 1px solid var(--line); padding: 16px 28px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: center; font-size: 14px; color: var(--muted); }
+.case-foot a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.case-foot a:hover { text-decoration: underline; }
+
+/* Keahlian */
+.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.skill { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; }
+.skill h3 { font-size: 18px; margin-bottom: 4px; }
+.skill p { font-size: 14px; color: var(--muted); margin-bottom: 14px; }
+
+/* Kontak */
+.contact { background: var(--ink); color: var(--bg); border-radius: 12px; padding: clamp(28px, 5vw, 56px); display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 32px; align-items: end; }
+.contact h2 { font-size: clamp(28px, 4.4vw, 44px); letter-spacing: -.015em; }
+.contact p { margin-top: 14px; opacity: .8; max-width: 46ch; }
+.contact .links { display: grid; gap: 10px; }
+.mail { display: flex; gap: 8px; align-items: stretch; }
+.mail code { flex: 1; min-width: 0; font: 400 14px var(--font-mono); padding: 12px 14px; border: 1px solid color-mix(in srgb, var(--bg) 35%, transparent); border-radius: 6px; overflow-wrap: anywhere; user-select: all; }
+.mail button { font: 600 13px var(--font-body); background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 6px; padding: 0 16px; cursor: pointer; }
+.contact a.ln { display: flex; justify-content: space-between; gap: 12px; text-decoration: none; padding: 10px 14px; border: 1px solid color-mix(in srgb, var(--bg) 35%, transparent); border-radius: 6px; font-size: 14px; }
+.contact a.ln:hover { border-color: var(--accent); }
+.contact a.ln span { font-family: var(--font-mono); opacity: .7; overflow-wrap: anywhere; text-align: right; }
+footer { padding-top: 28px; font: 400 12px var(--font-mono); color: var(--muted); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+@media (max-width: 860px) {
+  .hero, .sec-head, .about, .contact, .case-top { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .hero { padding-block: 36px 48px; }
+  .thumb { border-right: 0; border-bottom: 1px solid var(--line); }
+  .case-cols { grid-template-columns: minmax(0, 1fr); }
+  .case-cols > div { border-right: 0; border-bottom: 1px solid var(--line); }
+  .case-cols > div:last-child { border-bottom: 0; }
+  .skills { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 480px) {
+  .stat { padding: 14px; }
+  .stat b { font-size: 30px; }
+  .case-intro, .case-cols > div, .case-foot { padding-inline: 20px; }
+  .thumb { padding: 20px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#atas"><i></i>M Valetekhan Khamdan</a>
+    <nav aria-label="Navigasi utama">
+      <a class="hide-sm" href="#proyek">Proyek</a>
+      <a class="hide-sm" href="#keahlian">Keahlian</a>
+      <a href="#kontak">Kontak</a>
+      <button class="theme" id="theme" type="button" aria-label="Ganti tema">Tema</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="atas">
+  <div class="hero">
+    <div>
+      <span class="label">Web developer · Indonesia</span>
+      <h1>Saya membuat situs yang mengubah pengunjung menjadi <em>pesanan</em>.</h1>
+      <p class="lead">Saya M Valetekhan Khamdan. Saya merancang dan membangun situs ringan untuk usaha lokal, dari tampilan sampai alur pemesanan lewat WhatsApp.</p>
+      <div class="cta">
+        <a class="btn primary" href="#proyek">Lihat proyek</a>
+        <a class="btn ghost" href="#kontak">Hubungi saya</a>
+      </div>
+    </div>
+
+    <div class="browser">
+      <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">MulyoAdventure / index.html</span></div>
+      <div class="stats">
+        <div class="stat"><b>40</b><span>item gear di katalog</span></div>
+        <div class="stat"><b>8</b><span>kategori dengan filter</span></div>
+        <div class="stat"><b>2–30</b><span>hari pilihan durasi sewa</span></div>
+        <div class="stat"><b>0</b><span>dependensi dan langkah build</span></div>
+      </div>
+      <div class="msg">
+        <span class="label">Pesan WhatsApp yang disusun otomatis (contoh)</span>
+<pre>Halo MulyoAdventure, saya mau sewa mulai 2026-10-25 selama 3 hari:
+- Tenda Great Outdoor (GO) 4P x1
+- Matras x4</pre>
+      </div>
+    </div>
+  </div>
+
+  <section id="tentang">
+    <div class="about">
+      <div>
+        <span class="label">Tentang</span>
+        <h2>Web developer untuk usaha lokal</h2>
+      </div>
+      <div style="display:grid;gap:28px">
+        <div class="copy">
+          <p>Saya membuat situs yang jelas fungsinya: pengunjung melihat apa yang ditawarkan, memilih, lalu menghubungi pemilik usaha tanpa banyak langkah.</p>
+          <p>Proyek terbaru saya adalah MulyoAdventure, situs sewa perlengkapan outdoor di Kebumen. Pengunjung memilih gear, tanggal, dan durasi, lalu mengirim pesanan yang sudah tersusun lewat WhatsApp.</p>
+        </div>
+        <dl class="facts">
+          <div><dt>Fokus</dt><dd>Situs usaha &amp; aplikasi web ringan</dd></div>
+          <div><dt>Teknologi</dt><dd>HTML, CSS, JavaScript</dd></div>
+          <div><dt>Bahasa</dt><dd>Indonesia</dd></div>
+          <div><dt>Status</dt><dd>Terbuka untuk proyek baru</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyek">
+    <div class="sec-head">
+      <h2>Proyek unggulan</h2>
+      <p>Situs sewa gear outdoor yang sudah berfungsi penuh: katalog, perhitungan tanggal, daftar sewa, dan pemesanan lewat WhatsApp.</p>
+    </div>
+
+    <article class="case">
+      <div class="case-top">
+        <div class="thumb" aria-hidden="true">
+          <svg viewBox="0 0 320 210" fill="none">
+            <rect x="1" y="1" width="318" height="208" rx="8" fill="#f6f8f3" stroke="#d9e1d3"/>
+            <rect x="1" y="1" width="318" height="14" rx="7" fill="#16342a"/>
+            <rect x="1" y="8" width="318" height="7" fill="#16342a"/>
+            <text x="14" y="38" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#16342a">MulyoAdventure</text>
+            <rect x="1" y="48" width="318" height="112" fill="#16342a"/>
+            <rect x="16" y="62" width="70" height="5" rx="2" fill="#cfdcae"/>
+            <rect x="16" y="74" width="150" height="12" rx="3" fill="#f6f8f3"/>
+            <rect x="16" y="92" width="112" height="12" rx="3" fill="#f6f8f3"/>
+            <rect x="16" y="114" width="214" height="26" rx="6" fill="#f6f8f3"/>
+            <rect x="24" y="122" width="46" height="10" rx="2" fill="#d9e1d3"/>
+            <rect x="78" y="122" width="38" height="10" rx="2" fill="#d9e1d3"/>
+            <rect x="180" y="121" width="42" height="12" rx="3" fill="#f4c430"/>
+            <polygon points="1,160 58,134 96,150 166,118 224,146 268,128 319,160" fill="#f6f8f3"/>
+            <rect x="16" y="166" width="68" height="34" rx="5" fill="#ffffff" stroke="#d9e1d3"/>
+            <rect x="96" y="166" width="68" height="34" rx="5" fill="#ffffff" stroke="#d9e1d3"/>
+            <rect x="176" y="166" width="68" height="34" rx="5" fill="#ffffff" stroke="#d9e1d3"/>
+            <rect x="256" y="166" width="48" height="34" rx="5" fill="#ffffff" stroke="#d9e1d3"/>
+          </svg>
+        </div>
+        <div class="case-intro">
+          <span class="label">Situs sewa gear outdoor · 2026</span>
+          <h3>MulyoAdventure</h3>
+          <p>Situs untuk usaha sewa tenda, carrier, sepatu, dan perlengkapan camping lainnya di Kebumen. Calon penyewa bisa menyusun daftar sewa sendiri dan langsung mengirimnya ke pemilik.</p>
+          <div class="swatches" aria-label="Palet warna proyek">
+            <i style="background:#16342a" title="Pine #16342a"></i>
+            <i style="background:#2f5d46" title="Moss #2f5d46"></i>
+            <i style="background:#cfdcae" title="Lichen #cfdcae"></i>
+            <i style="background:#f4c430" title="Tent #f4c430"></i>
+            <span>Palet warna hutan pinus dan tenda</span>
+          </div>
+          <ul class="tags"><li>HTML</li><li>CSS Grid</li><li>JavaScript</li><li>WhatsApp</li><li>Google Fonts</li></ul>
+        </div>
+      </div>
+
+      <div class="case-cols">
+        <div>
+          <h4>Tujuan</h4>
+          <p>Penyewa tidak perlu bertanya satu per satu soal daftar gear dan harga. Semua tersedia di satu halaman, dan pesanan sampai ke pemilik dalam bentuk yang rapi lewat WhatsApp, kanal yang sudah dipakai pelanggan.</p>
+        </div>
+        <div>
+          <h4>Yang saya bangun</h4>
+          <ul>
+            <li>Katalog 40 item dalam 8 kategori, dengan filter kategori.</li>
+            <li>Pilihan tanggal ambil dan durasi 2–30 hari, batas pengembalian dihitung otomatis.</li>
+            <li>Daftar sewa dengan jumlah harga dan tombol hapus.</li>
+            <li>Tombol kirim yang menyusun pesan WhatsApp berisi tanggal, durasi, dan daftar gear.</li>
+            <li>Paket 4 orang yang memuat tenda, sleeping bag, carrier, dan alat masak.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Sisi teknis</h4>
+          <ul>
+            <li>Satu berkas HTML. Tanpa instalasi dan tanpa build.</li>
+            <li>JavaScript murni tanpa framework.</li>
+            <li>Tata letak responsif dengan CSS Grid dan variabel warna.</li>
+            <li>Status tombol filter, area daftar yang diumumkan ke pembaca layar, dan indikator fokus keyboard.</li>
+            <li>Format rupiah dan tanggal Indonesia lewat bawaan browser.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="case-foot">
+        <span>Ingin melihat demo langsungnya? Hubungi saya.</span>
+        <a href="#kontak">Minta demo →</a>
+      </div>
+    </article>
+  </section>
+
+  <section id="keahlian">
+    <div class="sec-head">
+      <h2>Keahlian</h2>
+      <p>Kemampuan yang terlihat langsung di proyek MulyoAdventure.</p>
+    </div>
+    <div class="skills">
+      <div class="skill">
+        <h3>Front-end</h3>
+        <p>Halaman yang rapi di ponsel maupun komputer.</p>
+        <ul class="tags"><li>HTML</li><li>CSS Grid</li><li>Flexbox</li><li>Custom properties</li><li>JavaScript</li><li>Responsif</li></ul>
+      </div>
+      <div class="skill">
+        <h3>Antarmuka &amp; aksesibilitas</h3>
+        <p>Mudah dipakai, termasuk lewat keyboard dan pembaca layar.</p>
+        <ul class="tags"><li>ARIA</li><li>Fokus keyboard</li><li>Filter &amp; daftar interaktif</li><li>Format rupiah &amp; tanggal</li></ul>
+      </div>
+      <div class="skill">
+        <h3>Alur pemesanan</h3>
+        <p>Menyambungkan situs dengan cara pelanggan sudah berkomunikasi.</p>
+        <ul class="tags"><li>Tautan WhatsApp</li><li>Pesan otomatis</li><li>Perhitungan tanggal</li><li>Google Fonts</li><li>VS Code</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <div class="contact">
+      <div>
+        <span class="label" style="color:inherit;opacity:.7">Kontak</span>
+        <h2 style="margin-top:12px">Butuh situs untuk usaha Anda? Ceritakan kebutuhannya.</h2>
+        <p>Sertakan jenis usaha, fitur yang dibutuhkan, dan tenggat bila ada.</p>
+      </div>
+      <div class="links">
+        <div class="mail">
+          <code id="email">khamdanvaletekhan@gmail.com</code>
+          <button type="button" id="copy">Salin</button>
+        </div>
+        <a class="ln" href="https://github.com/khamdanvaletekhan-svg" target="_blank" rel="noopener">GitHub <span>github.com/khamdanvaletekhan-svg</span></a>
+        <a class="ln" href="https://www.linkedin.com/in/valetekhan-khamdan-978175446/" target="_blank" rel="noopener">LinkedIn <span>linkedin.com/in/valetekhan-khamdan-978175446</span></a>
+      </div>
+    </div>
+    <footer><span>© 2026 M Valetekhan Khamdan</span><span>Dibuat dengan HTML, CSS, dan sedikit JavaScript</span></footer>
+  </section>
+</main>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById("theme");
+  var key = "portofolio-tema";
+  function current() {
+    var t = root.getAttribute("data-theme");
+    if (t) return t;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+  try { var saved = localStorage.getItem(key); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  function label() { btn.textContent = current() === "dark" ? "Terang" : "Gelap"; }
+  label();
+  btn.addEventListener("click", function () {
+    var next = current() === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem(key, next); } catch (e) {}
+    label();
+  });
+
+  var copy = document.getElementById("copy");
+  var email = document.getElementById("email");
+  copy.addEventListener("click", function () {
+    var done = function () { copy.textContent = "Tersalin"; setTimeout(function () { copy.textContent = "Salin"; }, 1600); };
+    var fallback = function () {
+      var r = document.createRange(); r.selectNodeContents(email);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      copy.textContent = "Terpilih";
+      setTimeout(function () { copy.textContent = "Salin"; }, 1600);
+    };
+    try { navigator.clipboard.writeText(email.textContent).then(done, fallback); } catch (e) { fallback(); }
+  });
+})();
+</script>
+
+</body></html>
